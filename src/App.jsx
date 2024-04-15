@@ -12,6 +12,10 @@ import UsersTable from "./Components/Users/usersTable";
 import MainPage from "./Components/MainPage/mainPage";
 import Dashboard from "./scenes/dashboard";
 import Calendar from "./scenes/calendar";
+import FAQ from "./scenes/faq";
+import Bar from "./scenes/bar";
+import Line from "./scenes/line";
+import Geography from "./scenes/geography";
 function App() {
   const [theme, colorMode] = useMode();
   return (
@@ -30,6 +34,10 @@ function App() {
               <Route path="/Navbar" element={<Navbar />} />
               <Route path="/usersTable" element={<UsersTable />} />
               <Route path="/Calendar" element={<Calendar />} />
+              <Route path="/FAQ" element={<FAQ />} />
+              <Route path="/Bar" element={<Bar />} />
+              <Route path="/Line" element={<Line />} />
+              <Route path="/Geography" element={<Geography />} />
             </Routes>
           </div>
         </BrowserRouter>

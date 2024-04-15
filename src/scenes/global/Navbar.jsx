@@ -105,6 +105,12 @@ function Navbar() {
               <span className="link hide">Users</span>
             </Link>
           </li>
+          <div className="tooltip">
+            <span className="show">Users</span>
+          </div>
+        </ul>
+        <h4 className="hide">Pages</h4>
+        <ul>
           <li
             className="tooltip-element"
             data-tooltip="2"
@@ -112,54 +118,9 @@ function Navbar() {
             tabIndex="0"
           >
             <Link
-              to="#"
+              to="/Calendar"
               className={activeIndex === 2 ? "active" : ""}
               onFocus={() => showTooltip(2)}
-            >
-              <div className="icon">
-                <i className="bx bx-category-alt"></i>
-                <i className="bx bx-category-alt"></i>
-              </div>
-              <span className="link hide hidelink">Categories</span>
-            </Link>
-          </li>
-          <li
-            className="tooltip-element"
-            data-tooltip="3"
-            onClick={() => changeLink(3)}
-            tabIndex="0"
-          >
-            <Link
-              to="#"
-              className={activeIndex === 3 ? "active" : ""}
-              onFocus={() => showTooltip(3)}
-            >
-              <div className="icon">
-                <i className="bx bx-globe"></i>
-                <i className="bx bx-globe"></i>
-              </div>
-              <span className="link hide">Websites</span>
-            </Link>
-          </li>
-          <div className="tooltip">
-            <span className="show">Users</span>
-            <span>Types</span>
-            <span>Categories</span>
-            <span>Websites</span>
-          </div>
-        </ul>
-        <h4 className="hide">Pages</h4>
-        <ul>
-          <li
-            className="tooltip-element"
-            data-tooltip="4"
-            onClick={() => changeLink(4)}
-            tabIndex="0"
-          >
-            <Link
-              to="/Calendar"
-              className={activeIndex === 4 ? "active" : ""}
-              onFocus={() => showTooltip(4)}
             >
               <div className="icon">
                 <i className="bx bxs-calendar"></i>
@@ -170,14 +131,14 @@ function Navbar() {
           </li>
           <li
             className="tooltip-element"
-            data-tooltip="5"
-            onClick={() => changeLink(5)}
+            data-tooltip="3"
+            onClick={() => changeLink(3)}
             tabIndex="0"
           >
             <Link
-              to="#"
-              className={activeIndex === 5 ? "active" : ""}
-              onFocus={() => showTooltip(5)}
+              to="/faq"
+              className={activeIndex === 3 ? "active" : ""}
+              onFocus={() => showTooltip(3)}
             >
               <div className="icon">
                 <i className="bx bx-question-mark"></i>
@@ -187,7 +148,63 @@ function Navbar() {
             </Link>
           </li>
         </ul>
-
+        <h4 className="hide">Graphs</h4>
+        <ul>
+          <li
+            className="tooltip-element"
+            data-tooltip="4"
+            onClick={() => changeLink(4)}
+            tabIndex="0"
+          >
+            <Link
+              to="/Bar"
+              className={activeIndex === 4 ? "active" : ""}
+              onFocus={() => showTooltip(4)}
+            >
+              <div className="icon">
+                <i className="bx bxs-bar-chart-alt-2"></i>
+                <i className="bx bxs-bar-chart-alt-2"></i>
+              </div>
+              <span className="link hide hidelink">Bar</span>
+            </Link>
+          </li>
+          <li
+            className="tooltip-element"
+            data-tooltip="5"
+            onClick={() => changeLink(5)}
+            tabIndex="0"
+          >
+            <Link
+              to="/Line"
+              className={activeIndex === 5 ? "active" : ""}
+              onFocus={() => showTooltip(5)}
+            >
+              <div className="icon">
+                <i className="bx bx-line-chart"></i>
+                <i className="bx bx-line-chart"></i>
+              </div>
+              <span className="link hide hidelink">Line</span>
+            </Link>
+          </li>
+          <li
+            className="tooltip-element"
+            data-tooltip="6"
+            onClick={() => changeLink(6)}
+            tabIndex="0"
+          >
+            <Link
+              to="/Geography"
+              className={activeIndex === 6 ? "active" : ""}
+              onFocus={() => showTooltip(6)}
+            >
+              <div className="icon">
+                <i className="bx bxs-network-chart"></i>
+                <i className="bx bxs-network-chart"></i>
+              </div>
+              <span className="link hide hidelink">Geography</span>
+            </Link>
+          </li>
+        </ul>
         <h4 className="hide">Shortcuts</h4>
 
         <ul>
@@ -195,8 +212,8 @@ function Navbar() {
 
           <li
             className="tooltip-element"
-            data-tooltip="6"
-            onClick={() => changeLink(6)}
+            data-tooltip="7"
+            onClick={() => changeLink(7)}
             tabIndex="0"
           >
             <Link to="#" onClick={toggleDropdown}>
@@ -211,8 +228,8 @@ function Navbar() {
                 <ul>
                   <li
                     className="tooltip-element"
-                    data-tooltip="7"
-                    onClick={() => changeLink(7)}
+                    data-tooltip="8"
+                    onClick={() => changeLink(8)}
                     tabIndex="0"
                   >
                     <Link to="/ChangePassword" onClick={toggleDropdown}>
@@ -225,8 +242,8 @@ function Navbar() {
                   </li>
                   <li
                     className="tooltip-element"
-                    data-tooltip="8"
-                    onClick={() => changeLink(8)}
+                    data-tooltip="9"
+                    onClick={() => changeLink(9)}
                     tabIndex="0"
                   >
                     <Link to="#" onClick={toggleDropdown}>
