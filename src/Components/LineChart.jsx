@@ -4,7 +4,7 @@ import { tokens } from "../theme";
 import { mockLineData as data } from "../../src/data/mockData";
 import PropTypes from "prop-types";
 
-const LineChart = ({ isCustomLineColors = false, isDashboard = false }) => {
+const LineChart = ({ isDashboard = false }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 

@@ -17,7 +17,50 @@ import GeographyChart from "../../Components/GeographyChart";
 const Dashboard = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-
+  const statBoxData = [
+    {
+      title: "12,361",
+      subtitle: "Emails Sent",
+      progress: 0.75,
+      increase: "+60%",
+      icon: (
+        <EmailIcon sx={{ color: colors.greenAccent[600], fontSize: "26px" }} />
+      ),
+    },
+    {
+      title: "431,22",
+      subtitle: "Sales Obtained",
+      progress: 0.5,
+      increase: "+30%",
+      icon: (
+        <PointOfSaleIcon
+          sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
+        />
+      ),
+    },
+    {
+      title: "32,44",
+      subtitle: "New Clients",
+      progress: 0.3,
+      increase: "+5%",
+      icon: (
+        <PersonAddIcon
+          sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
+        />
+      ),
+    },
+    {
+      title: "1,325",
+      subtitle: "Traffic Received",
+      progress: 0.8,
+      increase: "+43%",
+      icon: (
+        <TrafficIcon
+          sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
+        />
+      ),
+    },
+  ];
   return (
     <MainPage>
       <Box m="20px">
@@ -28,82 +71,20 @@ const Dashboard = () => {
         {/* GRID & CHARTS */}
         <Box display="grid" gridTemplateColumns="repeat(12, 1fr)" gap="20px">
           {/* Stat Boxes */}
-          <Box
-            gridColumn={{ xs: "span 12", md: "span 3" }}
-            backgroundColor={colors.primary[400]}
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-          >
-            <StatBox
-              title="12,361"
-              subtitle="Emails Sent"
-              progress="0.75"
-              increase="+14%"
-              icon={
-                <EmailIcon
-                  sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
-                />
-              }
-            />
-          </Box>
-          <Box
-            gridColumn={{ xs: "span 12", md: "span 3" }}
-            backgroundColor={colors.primary[400]}
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-          >
-            <StatBox
-              title="431,22"
-              subtitle="Sales Obtained"
-              progress="0.50"
-              increase="+21%"
-              icon={
-                <PointOfSaleIcon
-                  sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
-                />
-              }
-            />
-          </Box>
-          <Box
-            gridColumn={{ xs: "span 12", md: "span 3" }}
-            backgroundColor={colors.primary[400]}
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-          >
-            <StatBox
-              title="32,44"
-              subtitle="New Clients"
-              progress="0.30"
-              increase="+5%"
-              icon={
-                <PersonAddIcon
-                  sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
-                />
-              }
-            />
-          </Box>
-          <Box
-            gridColumn={{ xs: "span 12", md: "span 3" }}
-            backgroundColor={colors.primary[400]}
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-          >
-            <StatBox
-              title="1,325"
-              subtitle="Traffic Received"
-              progress="0.80"
-              increase="+43%"
-              icon={
-                <TrafficIcon
-                  sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
-                />
-              }
-            />
-          </Box>
+          {statBoxData.map((data, index) => (
+            <Box
+              height="20vh"
+              borderRadius="5px"
+              key={index}
+              gridColumn={{ xs: "span 12", md: "span 3" }}
+              backgroundColor={colors.primary[400]}
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+            >
+              <StatBox {...data} />
+            </Box>
+          ))}
           {/* Revenue Generated */}
           <Box
             gridColumn={{ xs: "span 12", md: "span 8" }}
@@ -187,7 +168,8 @@ const Dashboard = () => {
               alignItems="center"
               mt="25px"
             >
-              <ProgressCircle size="125" />
+              <ProgressCircle percentage={45} size={125} />
+
               <Typography
                 variant="h5"
                 color={colors.greenAccent[500]}

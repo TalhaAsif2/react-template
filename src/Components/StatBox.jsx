@@ -3,9 +3,13 @@ import { tokens } from "../theme";
 import ProgressCircle from "./PrograssCircle";
 import PropTypes from "prop-types";
 
-const StatBox = ({ title, subtitle, icon, progress, increase }) => {
+const StatBox = ({ title, subtitle, icon, increase }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+
+  const percentageIncrease = parseFloat(
+    increase.replace("+", "").replace("%", "")
+  );
 
   return (
     <Box width="100%" m="0 30px">
@@ -21,7 +25,7 @@ const StatBox = ({ title, subtitle, icon, progress, increase }) => {
           </Typography>
         </Box>
         <Box>
-          <ProgressCircle progress={progress} />
+          <ProgressCircle percentage={percentageIncrease} size={40} />
         </Box>
       </Box>
       <Box display="flex" justifyContent="space-between" mt="2px">
@@ -39,11 +43,12 @@ const StatBox = ({ title, subtitle, icon, progress, increase }) => {
     </Box>
   );
 };
+
 StatBox.propTypes = {
-  progress: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
-  icon: PropTypes.string.isRequired,
+  icon: PropTypes.node.isRequired,
   increase: PropTypes.string.isRequired,
 };
+
 export default StatBox;

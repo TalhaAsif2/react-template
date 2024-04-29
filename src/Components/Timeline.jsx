@@ -9,7 +9,6 @@ import TimelineDot from "@mui/lab/TimelineDot";
 import FastfoodIcon from "@mui/icons-material/Fastfood";
 import LaptopMacIcon from "@mui/icons-material/LaptopMac";
 import HotelIcon from "@mui/icons-material/Hotel";
-import RepeatIcon from "@mui/icons-material/Repeat";
 import Typography from "@mui/material/Typography";
 
 const Timelined = () => {
@@ -22,7 +21,7 @@ const Timelined = () => {
           variant="body2"
           color="text.secondary"
         >
-          9:30 am
+          7:00 am
         </TimelineOppositeContent>
         <TimelineSeparator>
           <TimelineConnector />
@@ -33,9 +32,9 @@ const Timelined = () => {
         </TimelineSeparator>
         <TimelineContent sx={{ py: "12px", px: 2 }}>
           <Typography variant="h6" component="span">
-            Eat
+            Breakfast
           </Typography>
-          <Typography>Because you need strength</Typography>
+          <Typography>Start your day with a healthy meal</Typography>
         </TimelineContent>
       </TimelineItem>
       <TimelineItem>
@@ -44,7 +43,7 @@ const Timelined = () => {
           variant="body2"
           color="text.secondary"
         >
-          10:00 am
+          9:00 am
         </TimelineOppositeContent>
         <TimelineSeparator>
           <TimelineConnector />
@@ -55,39 +54,24 @@ const Timelined = () => {
         </TimelineSeparator>
         <TimelineContent sx={{ py: "12px", px: 2 }}>
           <Typography variant="h6" component="span">
-            Code
+            Work
           </Typography>
-          <Typography>Because it&apos;s awesome!</Typography>
+          <Typography>Focus and get things done</Typography>
         </TimelineContent>
       </TimelineItem>
       <TimelineItem>
         <TimelineSeparator>
           <TimelineConnector />
-          <TimelineDot color="primary" variant="outlined">
+          <TimelineDot color="secondary">
             <HotelIcon />
           </TimelineDot>
-          <TimelineConnector sx={{ bgcolor: "secondary.main" }} />
-        </TimelineSeparator>
-        <TimelineContent sx={{ py: "12px", px: 2 }}>
-          <Typography variant="h6" component="span">
-            Sleep
-          </Typography>
-          <Typography>Because you need rest</Typography>
-        </TimelineContent>
-      </TimelineItem>
-      <TimelineItem>
-        <TimelineSeparator>
-          <TimelineConnector sx={{ bgcolor: "secondary.main" }} />
-          <TimelineDot color="secondary">
-            <RepeatIcon />
-          </TimelineDot>
           <TimelineConnector />
         </TimelineSeparator>
         <TimelineContent sx={{ py: "12px", px: 2 }}>
           <Typography variant="h6" component="span">
-            Repeat
+            Rest
           </Typography>
-          <Typography>Because this is the life you love!</Typography>
+          <Typography>Take a break and relax</Typography>
         </TimelineContent>
       </TimelineItem>
     </Timeline>

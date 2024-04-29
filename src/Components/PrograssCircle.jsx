@@ -2,16 +2,17 @@ import { Box, useTheme } from "@mui/material";
 import { tokens } from "../theme";
 import PropTypes from "prop-types";
 
-const ProgressCircle = ({ progress = "0.75", size = "40" }) => {
+const ProgressCircle = ({ percentage = 0, size = 40 }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-  const angle = progress * 360;
+  const angle = (percentage / 100) * 360;
+
   return (
     <Box
       sx={{
         background: `radial-gradient(${colors.primary[400]} 55%, transparent 56%),
-            conic-gradient(transparent 0deg ${angle}deg, ${colors.blueAccent[500]} ${angle}deg 360deg),
-            ${colors.greenAccent[500]}`,
+                    conic-gradient(transparent 0deg ${angle}deg, ${colors.blueAccent[500]} ${angle}deg 360deg),
+                    ${colors.greenAccent[500]}`,
         borderRadius: "50%",
         width: `${size}px`,
         height: `${size}px`,
@@ -19,8 +20,10 @@ const ProgressCircle = ({ progress = "0.75", size = "40" }) => {
     />
   );
 };
+
 ProgressCircle.propTypes = {
-  progress: PropTypes.string.isRequired,
-  size: PropTypes.string.isRequired,
+  percentage: PropTypes.number.isRequired,
+  size: PropTypes.number.isRequired,
 };
+
 export default ProgressCircle;
